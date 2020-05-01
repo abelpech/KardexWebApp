@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.html.simpleparser;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace ReporteadorKardex
 {
@@ -32,6 +34,14 @@ namespace ReporteadorKardex
             switch ((lstboxSPS.SelectedIndex + 1))
             {
                 case 1:
+                    DDL1.ClearSelection();
+                    DDL2.ClearSelection();
+                    DDLCampus.ClearSelection();
+                    DDLCarrera.ClearSelection();
+                    DDLPeriodo.ClearSelection();
+                    btnExportar.Visible = false;
+                    btnLimpiar.Visible = false;
+
                     lbReporte.Text = "Reporte: Carreras en un Campus";
 
                     lbDDL1.Visible = true;
@@ -43,14 +53,22 @@ namespace ReporteadorKardex
                     lbDDL2.Text = "Estatus - Carrera:";
                     DDL2.Visible = true;
 
+                    lbCampus.Visible = true;
+                    DDLCampus.Visible = true;
 
-                    lb1.Visible = true;
-                    lb1.Text = "Campus";
-                    txt1.Visible = true;
+                    lbCarrera.Visible = true;
+                    DDLCarrera.Visible = true;
 
-                    lb2.Visible = true;
-                    lb2.Text = "Carrera";
-                    txt2.Visible = true;
+                    lbPeriodo.Visible = false;
+                    DDLPeriodo.Visible = false;
+
+                    lb1.Visible = false;
+                    lb1.Text = " ";
+                    txt1.Visible = false;
+
+                    lb2.Visible = false;
+                    lb2.Text = " ";
+                    txt2.Visible = false;
 
                     lb3.Visible = false;
                     lb3.Text = " ";
@@ -62,6 +80,14 @@ namespace ReporteadorKardex
 
                     break;
                 case 2:
+                    DDL1.ClearSelection();
+                    DDL2.ClearSelection();
+                    DDLCampus.ClearSelection();
+                    DDLCarrera.ClearSelection();
+                    DDLPeriodo.ClearSelection();
+                    btnExportar.Visible = false;
+                    btnLimpiar.Visible = false;
+
                     lbReporte.Text = "Reporte: Materias asignadas a una Carrera";
 
                     lbDDL1.Visible = true;
@@ -74,13 +100,22 @@ namespace ReporteadorKardex
                     DDL2.Visible = true;
 
 
+                    lbCampus.Visible = false;
+                    DDLCampus.Visible = false;
+
+                    lbCarrera.Visible = true;
+                    DDLCarrera.Visible = true;
+
+                    lbPeriodo.Visible = false;
+                    DDLPeriodo.Visible = false;
+
                     lb1.Visible = true;
-                    lb1.Text = "Carrera";
+                    lb1.Text = "Materia";
                     txt1.Visible = true;
 
-                    lb2.Visible = true;
-                    lb2.Text = "Materia";
-                    txt2.Visible = true;
+                    lb2.Visible = false;
+                    lb2.Text = " ";
+                    txt2.Visible = false;
 
                     lb3.Visible = false;
                     lb3.Text = " ";
@@ -91,6 +126,14 @@ namespace ReporteadorKardex
                     txt4.Visible = false;
                     break;
                 case 3:
+                    DDL1.ClearSelection();
+                    DDL2.ClearSelection();
+                    DDLCampus.ClearSelection();
+                    DDLCarrera.ClearSelection();
+                    DDLPeriodo.ClearSelection();
+                    btnExportar.Visible = false;
+                    btnLimpiar.Visible = false;
+
                     lbReporte.Text = "Reporte: Maestros asignados a una Materia";
 
                     lbDDL1.Visible = false;
@@ -102,14 +145,22 @@ namespace ReporteadorKardex
                     lbDDL2.Text = " ";
                     DDL2.Visible = false;
 
+                    lbCampus.Visible = false;
+                    DDLCampus.Visible = false;
 
-                    lb1.Visible = true;
-                    lb1.Text = "Periodo";
-                    txt1.Visible = true;
+                    lbCarrera.Visible = true;
+                    DDLCarrera.Visible = true;
 
-                    lb2.Visible = true;
-                    lb2.Text = "Carrera";
-                    txt2.Visible = true;
+                    lbPeriodo.Visible = true;
+                    DDLPeriodo.Visible = true;
+
+                    lb1.Visible = false;
+                    lb1.Text = " ";
+                    txt1.Visible = false;
+
+                    lb2.Visible = false;
+                    lb2.Text = " ";
+                    txt2.Visible = false;
 
                     lb3.Visible = false;
                     lb3.Text = " ";
@@ -121,6 +172,15 @@ namespace ReporteadorKardex
 
                     break;
                 case 4:
+
+                    DDL1.ClearSelection();
+                    DDL2.ClearSelection();
+                    DDLCampus.ClearSelection();
+                    DDLCarrera.ClearSelection();
+                    DDLPeriodo.ClearSelection();
+                    btnExportar.Visible = false;
+                    btnLimpiar.Visible = false;
+
                     lbReporte.Text = "Reporte: Maestros por Estatus en una Carrera";
 
                     lbDDL1.Visible = true;
@@ -132,14 +192,22 @@ namespace ReporteadorKardex
                     lbDDL2.Text = " ";
                     DDL2.Visible = false;
 
+                    lbCampus.Visible = false;
+                    DDLCampus.Visible = false;
 
-                    lb1.Visible = true;
-                    lb1.Text = "Periodo";
-                    txt1.Visible = true;
+                    lbCarrera.Visible = true;
+                    DDLCarrera.Visible = true;
 
-                    lb2.Visible = true;
-                    lb2.Text = "Carrera";
-                    txt2.Visible = true;
+                    lbPeriodo.Visible = true;
+                    DDLPeriodo.Visible = true;
+
+                    lb1.Visible = false;
+                    lb1.Text = " ";
+                    txt1.Visible = false;
+
+                    lb2.Visible = false;
+                    lb2.Text = " ";
+                    txt2.Visible = false;
 
                     lb3.Visible = false;
                     lb3.Text = " ";
@@ -151,6 +219,15 @@ namespace ReporteadorKardex
 
                     break;
                 case 5:
+
+                    DDL1.ClearSelection();
+                    DDL2.ClearSelection();
+                    DDLCampus.ClearSelection();
+                    DDLCarrera.ClearSelection();
+                    DDLPeriodo.ClearSelection();
+                    btnExportar.Visible = false;
+                    btnLimpiar.Visible = false;
+
                     lbReporte.Text = "Reporte: Alumnos asignados por Materia";
 
 
@@ -163,18 +240,26 @@ namespace ReporteadorKardex
                     lbDDL2.Text = " ";
                     DDL2.Visible = false;
 
+                    lbCampus.Visible = false;
+                    DDLCampus.Visible = false;
+
+                    lbCarrera.Visible = true;
+                    DDLCarrera.Visible = true;
+
+                    lbPeriodo.Visible = true;
+                    DDLPeriodo.Visible = true;
 
                     lb1.Visible = true;
-                    lb1.Text = "Periodo";
+                    lb1.Text = "Grupo";
                     txt1.Visible = true;
 
-                    lb2.Visible = true;
-                    lb2.Text = "Carrera";
-                    txt2.Visible = true;
+                    lb2.Visible = false;
+                    lb2.Text = " ";
+                    txt2.Visible = false;
 
-                    lb3.Visible = true;
-                    lb3.Text = "Grupo";
-                    txt3.Visible = true;
+                    lb3.Visible = false;
+                    lb3.Text = " ";
+                    txt3.Visible = false;
 
                     lb4.Visible = false;
                     lb4.Text = " ";
@@ -182,6 +267,15 @@ namespace ReporteadorKardex
 
                     break;
                 case 6:
+
+                    DDL1.ClearSelection();
+                    DDL2.ClearSelection();
+                    DDLCampus.ClearSelection();
+                    DDLCarrera.ClearSelection();
+                    DDLPeriodo.ClearSelection();
+                    btnExportar.Visible = false;
+                    btnLimpiar.Visible = false;
+
                     lbReporte.Text = "Reporte: Alumnos en una Carrera por Estatus";
 
                     lbDDL1.Visible = true;
@@ -193,18 +287,26 @@ namespace ReporteadorKardex
                     lbDDL2.Text = " ";
                     DDL2.Visible = false;
 
+                    lbCampus.Visible = false;
+                    DDLCampus.Visible = false;
+
+                    lbCarrera.Visible = true;
+                    DDLCarrera.Visible = true;
+
+                    lbPeriodo.Visible = true;
+                    DDLPeriodo.Visible = true;
 
                     lb1.Visible = true;
-                    lb1.Text = "Periodo";
+                    lb1.Text = "Grupo";
                     txt1.Visible = true;
 
-                    lb2.Visible = true;
-                    lb2.Text = "Grupo";
-                    txt2.Visible = true;
+                    lb2.Visible = false;
+                    lb2.Text = " ";
+                    txt2.Visible = false;
 
-                    lb3.Visible = true;
-                    lb3.Text = "Carrera";
-                    txt3.Visible = true;
+                    lb3.Visible = false;
+                    lb3.Text = " ";
+                    txt3.Visible = false;
 
                     lb4.Visible = false;
                     lb4.Text = " ";
@@ -212,6 +314,15 @@ namespace ReporteadorKardex
 
                     break;
                 case 7:
+
+                    DDL1.ClearSelection();
+                    DDL2.ClearSelection();
+                    DDLCampus.ClearSelection();
+                    DDLCarrera.ClearSelection();
+                    DDLPeriodo.ClearSelection();
+                    btnExportar.Visible = false;
+                    btnLimpiar.Visible = false;
+
                     lbReporte.Text = "Reporte: Calificaciones por Alumno de todas las Materias";
 
                     lbDDL1.Visible = false;
@@ -223,6 +334,14 @@ namespace ReporteadorKardex
                     lbDDL2.Text = " ";
                     DDL2.Visible = false;
 
+                    lbCampus.Visible = false;
+                    DDLCampus.Visible = false;
+
+                    lbCarrera.Visible = false;
+                    DDLCarrera.Visible = false;
+
+                    lbPeriodo.Visible = false;
+                    DDLPeriodo.Visible = false;
 
                     lb1.Visible = true;
                     lb1.Text = "Alumno";
@@ -241,6 +360,15 @@ namespace ReporteadorKardex
                     txt4.Visible = false;
                     break;
                 case 8:
+
+                    DDL1.ClearSelection();
+                    DDL2.ClearSelection();
+                    DDLCampus.ClearSelection();
+                    DDLCarrera.ClearSelection();
+                    DDLPeriodo.ClearSelection();
+                    btnExportar.Visible = false;
+                    btnLimpiar.Visible = false;
+
                     lbReporte.Text = "Reporte: Calificaciones de Alumno por Materia y Periodo";
 
                     lbDDL1.Visible = false;
@@ -252,6 +380,14 @@ namespace ReporteadorKardex
                     lbDDL2.Text = " ";
                     DDL2.Visible = false;
 
+                    lbCampus.Visible = false;
+                    DDLCampus.Visible = false;
+
+                    lbCarrera.Visible = false;
+                    DDLCarrera.Visible = false;
+
+                    lbPeriodo.Visible = true;
+                    DDLPeriodo.Visible = true;
 
                     lb1.Visible = true;
                     lb1.Text = "Alumno";
@@ -261,9 +397,9 @@ namespace ReporteadorKardex
                     lb2.Text = "Materia";
                     txt2.Visible = true;
 
-                    lb3.Visible = true;
-                    lb3.Text = "Periodo";
-                    txt3.Visible = true;
+                    lb3.Visible = false;
+                    lb3.Text = " ";
+                    txt3.Visible = false;
 
                     lb4.Visible = false;
                     lb4.Text = " ";
@@ -271,6 +407,16 @@ namespace ReporteadorKardex
 
                     break;
                 case 9:
+
+                    DDL1.ClearSelection();
+                    DDL2.ClearSelection();
+                    DDLCampus.ClearSelection();
+                    DDLCarrera.ClearSelection();
+                    DDLPeriodo.ClearSelection();
+                    btnExportar.Visible = false;
+                    btnLimpiar.Visible = false;
+
+
                     lbReporte.Text = "Reporte: Horario de un Maestro";
 
                     lbDDL1.Visible = true;
@@ -282,14 +428,22 @@ namespace ReporteadorKardex
                     lbDDL2.Text = " ";
                     DDL2.Visible = false;
 
+                    lbCampus.Visible = false;
+                    DDLCampus.Visible = false;
+
+                    lbCarrera.Visible = false;
+                    DDLCarrera.Visible = false;
+
+                    lbPeriodo.Visible = true;
+                    DDLPeriodo.Visible = true;
 
                     lb1.Visible = true;
                     lb1.Text = "Maestro";
                     txt1.Visible = true;
 
-                    lb2.Visible = true;
-                    lb2.Text = "Periodo";
-                    txt2.Visible = true;
+                    lb2.Visible = false;
+                    lb2.Text = " ";
+                    txt2.Visible = false;
 
                     lb3.Visible = false;
                     lb3.Text = " ";
@@ -300,6 +454,16 @@ namespace ReporteadorKardex
                     txt4.Visible = false;
                     break;
                 case 10:
+
+                    DDL1.ClearSelection();
+                    DDL2.ClearSelection();
+                    DDLCampus.ClearSelection();
+                    DDLCarrera.ClearSelection();
+                    DDLPeriodo.ClearSelection();
+                    btnExportar.Visible = false;
+                    btnLimpiar.Visible = false;
+
+
                     lbReporte.Text = "Reporte: Horario de un Alumno";
 
                     lbDDL1.Visible = true;
@@ -311,14 +475,22 @@ namespace ReporteadorKardex
                     lbDDL2.Text = " ";
                     DDL2.Visible = false;
 
+                    lbCampus.Visible = false;
+                    DDLCampus.Visible = false;
+
+                    lbCarrera.Visible = false;
+                    DDLCarrera.Visible = false;
+
+                    lbPeriodo.Visible = true;
+                    DDLPeriodo.Visible = true;
 
                     lb1.Visible = true;
                     lb1.Text = "Alumno";
                     txt1.Visible = true;
 
-                    lb2.Visible = true;
-                    lb2.Text = "Periodo";
-                    txt2.Visible = true;
+                    lb2.Visible = false;
+                    lb2.Text = " ";
+                    txt2.Visible = false;
 
                     lb3.Visible = false;
                     lb3.Text = " ";
@@ -330,6 +502,16 @@ namespace ReporteadorKardex
 
                     break;
                 case 11:
+
+                    DDL1.ClearSelection();
+                    DDL2.ClearSelection();
+                    DDLCampus.ClearSelection();
+                    DDLCarrera.ClearSelection();
+                    DDLPeriodo.ClearSelection();
+                    btnExportar.Visible = false;
+                    btnLimpiar.Visible = false;
+
+
                     lbReporte.Text = "Reporte: Horario de un Grupo";
 
                     lbDDL1.Visible = true;
@@ -341,14 +523,22 @@ namespace ReporteadorKardex
                     lbDDL2.Text = " ";
                     DDL2.Visible = false;
 
+                    lbCampus.Visible = false;
+                    DDLCampus.Visible = false;
+
+                    lbCarrera.Visible = false;
+                    DDLCarrera.Visible = false;
+
+                    lbPeriodo.Visible = true;
+                    DDLPeriodo.Visible = true;
 
                     lb1.Visible = true;
                     lb1.Text = "Grupo";
                     txt1.Visible = true;
 
-                    lb2.Visible = true;
-                    lb2.Text = "Periodo";
-                    txt2.Visible = true;
+                    lb2.Visible = false;
+                    lb2.Text = " ";
+                    txt2.Visible = false;
 
                     lb3.Visible = false;
                     lb3.Text = " ";
@@ -393,43 +583,43 @@ namespace ReporteadorKardex
                     
                         parametros.Add(estatus1);
                         parametros.Add(estatus2);
-                        parametros.Add(txt1.Text);
-                        parametros.Add(txt2.Text);                        
+                        parametros.Add(DDLCampus.SelectedItem.Text);
+                        parametros.Add(DDLCarrera.SelectedItem.Text);                        
                         gvReportes.DataSource = db.ExecSP("REPORTE1", parametros);
                         parametros.Clear();
                         break;
                     case 2:                      
                         parametros.Add(estatus1);
                         parametros.Add(estatus2);
+                        parametros.Add(DDLCarrera.SelectedItem.Text);
                         parametros.Add(txt1.Text);
-                        parametros.Add(txt2.Text);
                     gvReportes.DataSource = db.ExecSP("REPORTE2", parametros);
                         parametros.Clear();
                         break;
                     case 3:
-                        parametros.Add(txt1.Text);
-                        parametros.Add(txt2.Text);
+                        parametros.Add(DDLPeriodo.SelectedItem.Text);
+                        parametros.Add(DDLCarrera.SelectedItem.Text);
                         gvReportes.DataSource = db.ExecSP("REPORTE3", parametros);
                         parametros.Clear();
                         break;
                     case 4:
-                        parametros.Add(txt1.Text);
-                        parametros.Add(txt2.Text);
+                        parametros.Add(DDLPeriodo.SelectedItem.Text);
+                        parametros.Add(DDLCarrera.SelectedItem.Text);
                         parametros.Add(estatus1);
                         gvReportes.DataSource = db.ExecSP("REPORTE4", parametros);
                         parametros.Clear();
                         break;
                     case 5:
+                        parametros.Add(DDLPeriodo.SelectedItem.Text);
+                        parametros.Add(DDLCarrera.SelectedItem.Text);
                         parametros.Add(txt1.Text);
-                        parametros.Add(txt2.Text);
-                        parametros.Add(txt3.Text);
                         gvReportes.DataSource = db.ExecSP("REPORTE5", parametros);
                         parametros.Clear();
                         break;
                     case 6:
+                        parametros.Add(DDLPeriodo.SelectedItem.Text);
                         parametros.Add(txt1.Text);
-                        parametros.Add(txt2.Text);
-                        parametros.Add(txt3.Text);
+                        parametros.Add(DDLCarrera.SelectedItem.Text);
                         parametros.Add(estatus1);
                         gvReportes.DataSource = db.ExecSP("REPORTE6", parametros);
                         parametros.Clear();
@@ -442,21 +632,21 @@ namespace ReporteadorKardex
                     case 8:
                         parametros.Add(txt1.Text);
                         parametros.Add(txt2.Text);
-                        parametros.Add(txt3.Text);
+                        parametros.Add(DDLPeriodo.SelectedItem.Text);
                         gvReportes.DataSource = db.ExecSP("REPORTE8", parametros);
                         parametros.Clear();
                         break;
                     case 9:
                         parametros.Add(txt1.Text);
                         parametros.Add(estatus1);
-                        parametros.Add(txt2.Text);
+                        parametros.Add(DDLPeriodo.SelectedItem.Text);
                         gvReportes.DataSource = db.ExecSP("REPORTE9", parametros);
                         parametros.Clear();
                         break;
                     case 10:
                         parametros.Add(txt1.Text);
                         parametros.Add(estatus1);
-                        parametros.Add(txt2.Text);
+                        parametros.Add(DDLPeriodo.SelectedItem.Text);
 
                         gvReportes.DataSource = db.ExecSP("REPORTE10", parametros);
                         parametros.Clear();
@@ -464,7 +654,7 @@ namespace ReporteadorKardex
                     case 11:
                         parametros.Add(txt1.Text);
                         parametros.Add(estatus1);
-                        parametros.Add(txt2.Text);
+                        parametros.Add(DDLPeriodo.SelectedItem.Text);
                         gvReportes.DataSource = db.ExecSP("REPORTE11", parametros);
                         parametros.Clear();
                         break;
@@ -472,6 +662,7 @@ namespace ReporteadorKardex
             
             gvReportes.DataBind();
             btnExportar.Visible = true;
+            btnLimpiar.Visible = true;
         }
 
         protected void btnExportar_Click(object sender, EventArgs e)
@@ -534,6 +725,23 @@ namespace ReporteadorKardex
             Response.Write(pdfDocument);
             Response.Flush();
             Response.End();
+        }
+
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            DDL1.ClearSelection();
+            DDL2.ClearSelection();
+            DDLCampus.ClearSelection();
+            DDLCarrera.ClearSelection();
+            DDLPeriodo.ClearSelection();
+            btnExportar.Visible = false;
+            txt1.Text = " ";
+            txt2.Text = " ";
+            txt3.Text = " ";
+            txt4.Text = " ";
+            gvReportes.DataSource = new DataTable();
+            gvReportes.DataBind();
+
         }
     }
 }

@@ -12,7 +12,7 @@
 
     <h2><asp:Label class="control-label"  ID="lbReporte" runat="server" Text="Reportes:"></asp:Label><br /></h2>
 
-    <asp:ListBox CssClass="list-group legend-list" ID="lstboxSPS" runat="server" Height="124px" Width="900px" AutoPostBack="True" OnSelectedIndexChanged="lstboxSPS_SelectedIndexChanged" style="min-width:100%;" Font-Size="Medium" Font-Italic="true" ForeColor="Navy">
+    <asp:ListBox CssClass="list-group legend-list" ID="lstboxSPS" runat="server" Height="124px" Width="900px" AutoPostBack="True" OnSelectedIndexChanged="lstboxSPS_SelectedIndexChanged" style="min-width:100%;" Font-Size="Medium" Font-Italic="True" ForeColor="Navy" Font-Bold="True">
         
         <asp:ListItem class ="list-group-item">1) CARRERAS EN UN CAMPUS</asp:ListItem>
         <asp:ListItem class ="list-group-item">2) MATERIAS ASIGNADAS A UNA CARRERA</asp:ListItem>
@@ -33,6 +33,8 @@
             <br />
             <br />
             
+       
+
 
     <asp:Panel ID="Panel1" runat="server" Height="46px" Visible="False">
         <div style="display:flex;">
@@ -54,6 +56,35 @@
                 </asp:DropDownList>
            </div>
 
+            <div style="float:left; margin-right:20px;">  
+                <asp:Label ID="lbCampus" runat="server" Text="Campus: " Font-Size ="Larger" Font-Bold="true">   </asp:Label>
+                    <asp:DropDownList ID="DDLCampus" runat="server" Width="150px" Font-Bold="true" Font-Size="Small" >
+                    <asp:ListItem > </asp:ListItem>
+                    <asp:ListItem >Morelos</asp:ListItem>
+                    <asp:ListItem>Santa Fe</asp:ListItem>
+                </asp:DropDownList>
+           </div>
+
+            <div style="float:left; margin-right:20px;">  
+                <asp:Label ID="lbCarrera" runat="server" Text="Carrera: " Font-Size ="Larger" Font-Bold="true">   </asp:Label>
+                    <asp:DropDownList ID="DDLCarrera" runat="server" Width="150px" Font-Bold="true" Font-Size="Small" >
+                    <asp:ListItem > </asp:ListItem>
+                    <asp:ListItem >Ing Desarrollo de Software</asp:ListItem>
+                    <asp:ListItem>Ing Multimedia</asp:ListItem>
+                    <asp:ListItem>Ing Industrial</asp:ListItem>
+                </asp:DropDownList>
+           </div>
+
+            <div style="float:left; margin-right:20px;">  
+                <asp:Label ID="lbPeriodo" runat="server" Text="Periodo: " Font-Size ="Larger" Font-Bold="true">   </asp:Label>
+                    <asp:DropDownList ID="DDLPeriodo" runat="server" Width="150px" Font-Bold="true" Font-Size="Small" >
+                    <asp:ListItem > </asp:ListItem>
+                    <asp:ListItem >2020-1</asp:ListItem>
+                    <asp:ListItem>2019-3</asp:ListItem>
+                    <asp:ListItem>2019-2</asp:ListItem>
+                    <asp:ListItem>2019-1</asp:ListItem>
+                </asp:DropDownList>
+           </div>
 
             <div style="float:left; margin-right:20px;">
                 <asp:Label ID="lb1" runat="server" Text="Label" Font-Bold="true" Font-Size="Larger"></asp:Label><br />
@@ -80,10 +111,14 @@
             <br />
             <center>
     <asp:Button CssClass="btn btn-primary" ID="btnConsultar" runat="server" Text="Consultar" Width="157px" OnClick="btnConsultar_Click" Visible="False" />
+                <br />
+                <br />
+                    <asp:Button CssClass="btn-theme" ID="btnLimpiar" runat="server" Text="Limpiar" Width="120px" OnClick="btnLimpiar_Click" Visible="False" />
+
       </center>
             <br />
             <br />
-            <br />
+          
 
 
              <style>
